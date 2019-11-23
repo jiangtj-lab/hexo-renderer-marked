@@ -2,7 +2,7 @@
 
 'use strict';
 
-var renderer = require('./lib/renderer');
+var renderer = require('./lib/renderer')(hexo);
 
 hexo.config.marked = Object.assign({
   gfm: true,
@@ -22,6 +22,7 @@ hexo.config.marked = Object.assign({
   }
 }, hexo.config.marked);
 
+require('./lib/filter')(hexo);
 hexo.extend.renderer.register('md', 'html', renderer, true);
 hexo.extend.renderer.register('markdown', 'html', renderer, true);
 hexo.extend.renderer.register('mkd', 'html', renderer, true);
