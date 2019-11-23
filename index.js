@@ -2,7 +2,7 @@
 
 'use strict';
 
-var renderer = require('./lib/renderer')(hexo);
+var renderer = require('./lib/renderer');
 
 hexo.config.marked = Object.assign({
   gfm: true,
